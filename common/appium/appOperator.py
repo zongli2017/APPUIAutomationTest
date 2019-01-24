@@ -220,7 +220,7 @@ class AppOperator:
         alert=self._driver.switch_to.alert
         alert.accept()
 
-    def get_alert_test(self):
+    def get_alert_text(self):
         """
         仅使用web
         :return:
