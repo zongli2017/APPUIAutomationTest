@@ -29,10 +29,10 @@ if __name__=='__main__':
                 allure_process_id = allure_process_id.strip()
                 port_process_id = port_process_id.strip()
                 if allure_process_id == port_process_id and not is_find and allure_process_id and port_process_id:
-                    print '关闭allure进程,进程id:' + allure_process_id.strip() + ',该进程监听已监听端口:' + port
+                    print('关闭allure进程,进程id:' + allure_process_id.strip() + ',该进程监听已监听端口:' + port)
                     subprocess.check_output("kill -9 " + allure_process_id.strip(), shell=True)
                     is_find = True
                     break
-        print '生成报告,使用端口' + port
+        print('生成报告,使用端口' + port)
         subprocess.check_output("nohup allure serve -p " + port + " output/ >logs/generateReport.log 2>&1 &",shell=True)
 

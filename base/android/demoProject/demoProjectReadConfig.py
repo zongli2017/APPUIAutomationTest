@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 from pojo.android.demoProject.demoProjectConfig import DemoProjectConfig
-import ConfigParser
+import configparser as ConfigParser
 import os
 
 class DemoProjectReadConfig(object):
@@ -19,7 +19,7 @@ class DemoProjectReadConfig(object):
 
     def _readConfig(self, configFile):
         config = ConfigParser.ConfigParser()
-        config.read(configFile)
+        config.read(configFile,encoding='utf-8')
         demoProjectConfig = DemoProjectConfig()
         demoProjectConfig.platformName = config.get('desired_capabilities','platformName')
         demoProjectConfig.automationName = config.get('desired_capabilities','automationName')

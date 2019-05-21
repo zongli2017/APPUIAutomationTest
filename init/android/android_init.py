@@ -1,7 +1,7 @@
 #-*- coding:utf8 -*-
 from init.android.demoProject.demoProjectInit import DemoProjectInit
 
-import ConfigParser
+import configparser as ConfigParser
 
 def android_init():
     """
@@ -9,7 +9,7 @@ def android_init():
     :return:
     """
     config = ConfigParser.ConfigParser()
-    config.read('config/android/android_init.conf')
+    config.read('config/android/android_init.conf',encoding='utf-8')
 
     if 1==int(config.get('isInit','demoProject')):
         DemoProjectInit().init()

@@ -1,7 +1,7 @@
 #-*- coding:utf8 -*-
 from init.winwos.demoPorject.demoProjectInit import DemoProjectInit
 
-import ConfigParser
+import configparser as ConfigParser
 
 def windows_init():
     """
@@ -9,7 +9,7 @@ def windows_init():
     :return:
     """
     config = ConfigParser.ConfigParser()
-    config.read('config/windows/windows_init.conf')
+    config.read('config/windows/windows_init.conf',encoding='utf-8')
 
     if 1==int(config.get('isInit','demoProject')):
         DemoProjectInit().init()

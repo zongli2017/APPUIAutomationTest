@@ -18,43 +18,43 @@ if __name__=='__main__':
     parser.add_argument('-d','--dir',help='指定要测试的目录',type=str)
     args=parser.parse_args()
 
-    print '开始初始化......'
-    print '开始检测appium server是否可用......'
+    print('开始初始化......')
+    print('开始检测appium server是否可用......')
     try:
         doRquest=DoRequest(ReadConfig().config.appium_hub)
 
         httpResponseResult=doRquest.get('/status')
         result=json.loads(httpResponseResult.body)
         if result['status']==0:
-            print 'appium server状态为可用......'
+            print('appium server状态为可用......')
         else:
             sys.exit('appium server状态为不可用')
     except:
         sys.exit('appium server状态为不可用')
 
-    print '启动jvm......'
+    print('启动jvm......')
     jpype.startJVM(jpype.get_default_jvm_path(),"-ea","-Djava.class.path="+JavaTool.getAllJar())
-    print '启动jvm成功'
+    print('启动jvm成功')
 
-    print '初始化android基础数据......'
+    print('初始化android基础数据......')
     android_init()
-    print '初始化android基础数据完成......'
+    print('初始化android基础数据完成......')
 
-    print '初始化ios基础数据......'
+    print('初始化ios基础数据......')
     ios_init()
-    print '初始化ios基础数据完成......'
+    print('初始化ios基础数据完成......')
 
-    print '初始化windows基础数据......'
+    print('初始化windows基础数据......')
     windows_init()
-    print '初始化windows基础数据完成......'
+    print('初始化windows基础数据完成......')
 
-    print '初始化chrome基础数据......'
+    print('初始化chrome基础数据......')
     chrome_init()
-    print '初始化chrome基础数据完成......'
+    print('初始化chrome基础数据完成......')
 
-    print '初始化完成......'
+    print('初始化完成......')
 
-    print '开始测试......'
+    print('开始测试......')
     # 执行pytest前的参数准备
     pytest_execute_params=['-c', 'config/pytest.conf', '-v', '--alluredir', 'output/','--clean-alluredir']
     # 判断目录参数
@@ -72,5 +72,5 @@ if __name__=='__main__':
     # print '关闭jvm......'
     # jpype.shutdownJVM()
 
-    print '结束测试......'
+    print('结束测试......')
     sys.exit(exit_code)

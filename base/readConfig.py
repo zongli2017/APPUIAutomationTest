@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 from pojo.config import Config
-import ConfigParser
+import configparser as ConfigParser
 
 class ReadConfig(object):
     __instance=None
@@ -18,7 +18,7 @@ class ReadConfig(object):
 
     def _readConfig(self, configFile):
         configParser = ConfigParser.ConfigParser()
-        configParser.read(configFile)
+        configParser.read(configFile,encoding='utf-8')
         config = Config()
         config.appium_hub=configParser.get('appium_server','appium_hub')
         return config

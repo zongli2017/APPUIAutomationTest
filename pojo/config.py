@@ -1,12 +1,12 @@
 # -*- coding:utf-8 -*-
 class Config:
     def __init__(self):
-        self.appium_hub=None
+        self._appium_hub=None
 
     @property
     def appium_hub(self):
-        return self.appium_hub
+        return self._appium_hub
 
     @appium_hub.setter
     def appium_hub(self,appium_hub):
-        self.appium_hub=appium_hub
+        self._appium_hub=appium_hub

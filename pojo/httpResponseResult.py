@@ -2,39 +2,39 @@
 
 class HttpResponseResult:
     def __init__(self):
-        self.status_code=None
-        self.body=None
-        self.cookies=None
-        self.headers=None
+        self._status_code=None
+        self._body=None
+        self._cookies=None
+        self._headers=None
 
     @property
     def status_code(self):
-        return self.status_code
+        return self._status_code
 
     @status_code.setter
     def status_code(self,status_code):
-        self.status_code=status_code
+        self._status_code=status_code
 
     @property
     def body(self):
-        return self.body
+        return self._body
 
     @body.setter
     def body(self,body):
-        self.body=body
+        self._body=body
 
     @property
     def cookies(self):
-        return self.cookies
+        return self._cookies
 
     @cookies.setter
     def cookies(self,cookies):
-        self.cookies=cookies
+        self._cookies=cookies
 
     @property
     def headers(self):
-        return self.headers
+        return self._headers
 
     @headers.setter
     def headers(self,headers):
-        self.headers=headers
+        self._headers=headers

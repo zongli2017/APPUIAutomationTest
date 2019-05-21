@@ -20,9 +20,9 @@ class TestIndexPage:
 
     @pytest.fixture
     def fixture_test_silde(self):
-        print 'start......'
+        print('start......')
         yield self.fixture_test_silde
-        print 'end......'
+        print('end......')
 
     def test_silde(self,fixture_test_silde):
         time.sleep(10)

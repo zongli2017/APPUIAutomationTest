@@ -1,79 +1,80 @@
 # -*- coding:utf-8 -*-
 class DemoProjectConfig:
     def __init__(self):
-        self.platformName = None
-        self.automationName = None
-        self.platformVersion = None
-        self.deviceName = None
-        self.appActivity = None
-        self.appPackage = None
-        self.app = None
+        self._platformName = None
+        self._automationName = None
+        self._platformVersion = None
+        self._deviceName = None
+        self._appActivity = None
+        self._appPackage = None
+        self._app = None
 
     @property
     def platformName(self):
-        return self.platformName
+        return self._platformName
 
     @platformName.setter
     def platformName(self,platformName):
-        self.platformName=platformName
+        self._platformName=platformName
 
     @property
     def automationName(self):
-        return self.automationName
+        return self._automationName
 
     @automationName.setter
     def automationName(self,automationName):
-        self.automationName=automationName
+        self._automationName=automationName
 
     @property
     def platformVersion(self):
-        return self.platformVersion
+        return self._platformVersion
 
     @platformVersion.setter
     def platformVersion(self,platformVersion):
-        self.platformVersion=platformVersion
+        self._platformVersion=platformVersion
 
     @property
     def deviceName(self):
-        return self.deviceName
+        return self._deviceName
 
     @deviceName.setter
     def deviceName(self,deviceName):
-        self.deviceName=deviceName
+        self._deviceName=deviceName
+
     @property
     def appActivity(self):
-        return self.appActivity
+        return self._appActivity
 
     @appActivity.setter
     def appActivity(self,appActivity):
-        self.appActivity=appActivity
+        self._appActivity=appActivity
 
     @property
     def appPackage(self):
-        return self.appPackage
+        return self._appPackage
 
     @appPackage.setter
     def appPackage(self,appPackage):
-        self.appPackage=appPackage
+        self._appPackage=appPackage
 
     @property
     def app(self):
-        return self.app
+        return self._app
 
     @app.setter
     def app(self,app):
-        self.app=app
+        self._app=app
 
     def get_desired_capabilities(self):
         desired_capabilities={}
-        desired_capabilities.update({'platformName':self.platformName})
-        if self.automationName:
-            desired_capabilities.update({'automationName':self.automationName})
-        desired_capabilities.update({'platformVersion':self.platformVersion})
-        desired_capabilities.update({'deviceName':self.deviceName})
-        if self.appActivity and self.appPackage:
-            desired_capabilities.update({'appActivity':self.appActivity})
-            desired_capabilities.update({'appPackage':self.appPackage})
-        if self.app:
-            desired_capabilities.update({'app':self.app})
+        desired_capabilities.update({'platformName':self._platformName})
+        if self._automationName:
+            desired_capabilities.update({'automationName':self._automationName})
+        desired_capabilities.update({'platformVersion':self._platformVersion})
+        desired_capabilities.update({'deviceName':self._deviceName})
+        if self._appActivity and self._appPackage:
+            desired_capabilities.update({'appActivity':self._appActivity})
+            desired_capabilities.update({'appPackage':self._appPackage})
+        if self._app:
+            desired_capabilities.update({'app':self._app})
         return desired_capabilities

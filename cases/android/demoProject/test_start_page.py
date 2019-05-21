@@ -15,9 +15,9 @@ class TestStartPage:
 
     @pytest.fixture
     def fixture_test_click_start_btn(self):
-        print 'start......'
+        print('start......')
         yield self.fixture_test_click_start_btn
-        print 'end......'
+        print('end......')
 
     def test_click_start_btn(self,fixture_test_click_start_btn):
         self.startPage.click_start()

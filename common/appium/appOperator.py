@@ -329,8 +329,8 @@ class AppOperator:
                 elif data_type.lower()=='webelement':
                     tr_data=tr_tds
                 table_data.append(tr_data)
-        except StaleElementReferenceException, e:
-                print '获取表格内容异常:' + e.message
+        except StaleElementReferenceException as e:
+                print('获取表格内容异常:' + e.msg)
         return table_data
 
     def get_window_size(self):

@@ -6,7 +6,7 @@ import string
 import uuid
 class StrTool:
 
-    letters = list(string.letters)
+    letters = list(string.ascii_letters)
     whitespace = list(string.whitespace)
     punctuation = list(string.punctuation)
     digits = list(string.digits)
@@ -172,7 +172,7 @@ class StrTool:
         for i in range(length):
             info=percents_info[cls.random_index(percents)]
             if info == 'ch_percent':
-                result += unichr(random.randint(int(cls.ch_start),int(cls.ch_end)))
+                result += chr(random.randint(int(cls.ch_start),int(cls.ch_end)))
             elif info == 'en_percent':
                 result += random.choice(cls.letters)
             elif info == 'digits_percent':

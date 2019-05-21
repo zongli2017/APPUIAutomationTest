@@ -1,7 +1,7 @@
 #-*- coding:utf8 -*-
 from init.ios.demoPorject.demoProjectInit import DemoProjectInit
 
-import ConfigParser
+import configparser as ConfigParser
 
 def ios_init():
     """
@@ -9,7 +9,7 @@ def ios_init():
     :return:
     """
     config = ConfigParser.ConfigParser()
-    config.read('config/ios/ios_init.conf')
+    config.read('config/ios/ios_init.conf',encoding='utf-8')
 
     if 1==int(config.get('isInit','demoProject')):
         DemoProjectInit().init()

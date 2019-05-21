@@ -16,8 +16,8 @@ class OracleClient:
         try:
             self._cursor.execute(sql)
             self._conn.commit()
-        except Exception,e:
-            print e.message
+        except Exception as e:
+            print(e.args)
             self._conn.rollback()
 
     def querySQL(self,sql):
@@ -26,8 +26,8 @@ class OracleClient:
             self._cursor.execute(sql)
             result=self._cursor.fetchall()
             self._conn.commit()
-        except Exception,e:
-            print e.message
+        except Exception as e:
+            print(e.args)
             self._conn.rollback()
         return result
 
@@ -40,8 +40,8 @@ class OracleClient:
         try:
             self._cursor.executemany(query, values)
             self._conn.commit()
-        except Exception,e:
-            print e.message
+        except Exception as e:
+            print(e.args)
             self._conn.rollback()
 
     def closeAll(self):
